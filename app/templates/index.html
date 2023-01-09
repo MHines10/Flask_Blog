@@ -9,5 +9,18 @@
 <body>
     <h1>Hello {{ name }} from the index templates</h1>
     <h4>{{ 10 + 5 }}</h4>
+
+    {{ fruits }}
+    
+    <h4>The Fruits I have are:</h4>
+    <ul>
+        {% for f in fruits %}
+            {% if f[-1] == 'y' %}
+                <li>{{ f.upper() }}</li>
+            {% else %}
+                <li>{{ f.lower() }}</li>
+            {% endif %}
+        {% endfor %}
+    </ul>
 </body>
 </html>
